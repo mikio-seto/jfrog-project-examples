@@ -52,8 +52,8 @@ jobs:
         jf rt ping # Ping the server
         jf c show
         jf mvnc \
-          --server-id-deploy default \
-          --server-id-resolve default \
+          --server-id-deploy setup-jfrog-cli-server \
+          --server-id-resolve setup-jfrog-cli-server \
           --repo-deploy-releases test1-maven \
           --repo-deploy-snapshots test1-maven \
           --repo-resolve-releases test1-maven \
