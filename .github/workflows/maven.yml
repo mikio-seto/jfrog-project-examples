@@ -51,8 +51,8 @@ jobs:
       run: |
         jf rt ping # Ping the server
         jf mvnc \
-          --server-id-deploy default-server \
-          --server-id-resolve default-server \
+          --server-id-deploy default \
+          --server-id-resolve default \
           --repo-deploy-releases test1-maven \
           --repo-deploy-snapshots test1-maven \
           --repo-resolve-releases test1-maven \
