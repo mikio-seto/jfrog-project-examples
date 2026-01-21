@@ -61,9 +61,10 @@ jobs:
           --repo-deploy-releases test1-maven \
           --repo-deploy-snapshots test1-maven \
           --repo-resolve-releases test1-maven \
-          --repo-resolve-snapshots test1-maven
+          --repo-resolve-snapshots test1-maven \
+          --use-wrapper=true
           
-        jf mvn clean install -Dmaven.version=3.8.8　--build-name test-github-maven --build-number ${{github.run_number}}
+        jf mvn clean install --build-name test-github-maven --build-number ${{github.run_number}}
         jf rt bce test-github-maven ${{github.run_number}}
         jf rt bag test-github-maven ${{github.run_number}}
         jf rt bp test-github-maven ${{github.run_number}}
