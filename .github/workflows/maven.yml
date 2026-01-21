@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: CO
+    - name: CheckOut
       uses: actions/checkout@v4
       
     - name: Set up JDK 17
@@ -45,6 +45,7 @@ jobs:
           JF_URL: https://soleng.jfrog.io/
       with:
         oidc-provider-name: github-oidc015
+        oidc-audience: jfrog-github
     - name: Run JFrog CLI
       working-directory: maven-examples/maven-example
       run: |
