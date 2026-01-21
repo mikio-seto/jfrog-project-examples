@@ -50,6 +50,7 @@ jobs:
       working-directory: maven-examples/maven-example
       run: |
         jf rt ping # Ping the server
+        jf c show
         jf mvnc \
           --server-id-deploy default \
           --server-id-resolve default \
