@@ -36,7 +36,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: 
+      run: |
         mvn -B package --file maven-examples/maven-example/pom.xml
         mvn -v 
         exit 0
