@@ -34,7 +34,7 @@ jobs:
       with:
         java-version: '16'
         distribution: 'temurin'
-        cache: maven
+        maven-version: '3.8.8'
         
     - name: Build with Maven
       working-directory: maven-examples/maven-example
