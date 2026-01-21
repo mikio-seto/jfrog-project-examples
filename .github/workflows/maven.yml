@@ -37,9 +37,10 @@ jobs:
         cache: maven
         
     - name: Build with Maven
+      working-directory: maven-examples/maven-example
       run: |
         mvn -v 
-        mvn -B package --file maven-examples/maven-example/pom.xml
+        mvn -B package
         
     - name: Setup JFrog CLI
       uses: jfrog/setup-jfrog-cli@v4
