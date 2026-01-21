@@ -1,9 +1,6 @@
 name: JFrog CLI OICD integration
-
 on:
   push:
-    branches: [ "master" ]
-  pull_request:
     branches: [ "master" ]
 
 permissions:
@@ -32,6 +29,7 @@ jobs:
       with:
         oidc-provider-name: github-oidc015
         oidc-audience: jfrog-github
+        
     - name: Run JFrog CLI
       working-directory: maven-examples/maven-example
       run: |
