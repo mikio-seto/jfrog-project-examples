@@ -42,9 +42,9 @@ jobs:
       uses: jfrog/setup-jfrog-cli@v4
       env:
           # JFrog platform url (for example: https://acme.jfrog.io)
-          JF_URL: https://35.213.51.135/
+          JF_URL: https://soleng.jfrog.io/
       with:
-        oidc-provider-name: github-oidc
+        oidc-provider-name: github-oidc015
     - name: Run JFrog CLI
       run: |
         # Ping the server
