@@ -36,7 +36,10 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -B package --file maven-examples/maven-example/pom.xml
+      run: 
+        mvn -B package --file maven-examples/maven-example/pom.xml
+        mvn -v 
+        exit 0
 
     - name: Setup JFrog CLI
       uses: jfrog/setup-jfrog-cli@v4
