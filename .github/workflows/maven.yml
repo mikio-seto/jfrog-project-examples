@@ -46,12 +46,18 @@ jobs:
       with:
         oidc-provider-name: github-oidc015
     - name: Run JFrog CLI
+      working-directory: maven-examples/maven-example
       run: |
-        # Ping the server
-        jf rt ping
-        # Collect environment variables for the build
-        jf rt bce
-        # Collect VCS details from git and add them to the build
-        jf rt bag
-        # Publish build info
-        jf rt bp
+        jf rt ping # Ping the server
+        jf mvnc \
+          --server-id-deploy default-server \
+          --server-id-resolve default-server \
+          --repo-deploy-releases test1-maven \
+          --repo-deploy-snapshots test1-maven \
+          --repo-resolve-releases test1-maven \
+          --repo-resolve-snapshots test1-maven
+          
+        jf mvn clean install --build-name test-github-maven --build-number ${{github.run_number}}
+        jf rt bce test-github-maven ${{github.run_number}}
+        jf rt bag test-github-maven ${{github.run_number}}
+        jf rt bp test-github-maven ${{github.run_number}}
