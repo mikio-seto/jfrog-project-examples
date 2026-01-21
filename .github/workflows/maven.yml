@@ -42,7 +42,7 @@ jobs:
       uses: jfrog/setup-jfrog-cli@v4
       env:
           # JFrog platform url (for example: https://acme.jfrog.io)
-          JF_URL: http://35.213.51.135/
+          JF_URL: https://35.213.51.135/
       with:
         oidc-provider-name: github-oidc
     - name: Run JFrog CLI
